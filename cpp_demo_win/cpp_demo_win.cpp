@@ -9,9 +9,16 @@
 #include "PrintData.h"
 #include "Shape.h"
 #include "TestThread_std.h"
-
+#include "TestVector.h"
+#include "TestReferences.h"
+#include"TestList.h"
+#include <queue>
+#include "TestTemplate.h"
+#include <map>
 using namespace std;
 using std::setw;
+
+
 void testline() {
 	cout << "enter testline" << endl;
 	Line line;
@@ -55,6 +62,7 @@ void testSmallBox() {
 	box.setSmallWidth(5.0);
 	cout << "Width of box : " << box.getSmallWidth() << endl;
 }
+//测试友元函数
 void testFriendMethod() {
 	cout << "enter testFriendMethod" << endl;
 	Box box;
@@ -63,6 +71,7 @@ void testFriendMethod() {
 	// 使用友元函数输出宽度
 	printWidth(box);
 }
+//测试打印
 void testPrintData()
 {
 	cout << "enter testPrintData" << endl;
@@ -77,7 +86,7 @@ void testPrintData()
 	char c[] = "Hello C++";
 	pd.print(c);
 }
-//测试多态
+//测试多态、命名空间、接口、抽象类、虚方法
 void testDerivedClass() {
 	cout << "enter testDerivedClass" << endl;
 
@@ -98,6 +107,7 @@ void testDerivedClass() {
 	shape->area();
 
 }
+//测试字符串
 void testString() {
 	cout << "enter testString" << endl;
 
@@ -119,6 +129,7 @@ void testString() {
 	cout << "str3.size() :  " << len << endl;
 
 }
+//测试数组
 void testArray() {
 	cout << "enter testArray" << endl;
 	int n[10]; // n 是一个包含 10 个整数的数组
@@ -137,6 +148,7 @@ void testArray() {
 	}
 
 }
+//测试动态内存
 void testNewAndDelete() {
 	cout << "enter testNewAndDelete" << endl;
 
@@ -148,14 +160,76 @@ void testNewAndDelete() {
 	
 	delete pvalue;         // 释放内存
 
+	int* array = new int[5];
+	for (int i = 0; i < 5; i++)
+	{
+		array[i] = i;
+	}
+	for (int i = 0; i < 5; i++)
+	{
+		cout << array[i] << endl;
+	}
+	Box* box = new Box();
+	cout << box->getVolume() << endl;
+
 
 }
-
+//测试C++线程
 void testThread() {
 	cout << "testThread" << endl;
 	TestThread_std testThread_std;
 	testThread_std.startTest();
 }
+//测试Vector
+void testVector() {
+	cout << "testVector" << endl;
+	TestVector testVector;
+	testVector.starTest();
+}
+//测试引用
+void testReferences() {
+	cout << "testReferences" << endl;
+	TestReferences  testReferences;
+	testReferences.startTest();
+}
+//测试list
+void testList() {
+	cout << "testList" << endl;
+	TestList testList;
+	testList.startTest();
+}
+//测试队列
+void testQueues() {
+	std::queue<int> myqueue;
+	int sum(0);
+
+	for (int i = 1; i <= 10; i++) 
+		myqueue.push(i);
+
+	while (!myqueue.empty())
+	{
+		sum += myqueue.front();
+		myqueue.pop();
+	}
+
+	std::cout << "total: " << sum << '\n';
+}
+//测试map
+void testMap() {
+	map<int, string> mapStudent;
+	mapStudent.insert(map<int,string>::value_type(1, "student_one"));
+	mapStudent.insert(map<int,string>::value_type(2, "student_two"));
+	mapStudent.insert(map<int,string>::value_type(3, "student_three"));
+	map<int, string>::iterator iter;
+	for (iter = mapStudent.begin(); iter != mapStudent.end(); iter++)
+		cout << iter->first << ' ' << iter->second << endl;
+}
+//测试模板
+void testTemplates() {
+	TestTemplate testTemplates;
+	testTemplates.startTest();
+}
+
 int main()
 {
 	cout << "main" << endl;
@@ -170,7 +244,11 @@ int main()
 	testArray();
 	testNewAndDelete();
 	testThread();
+	testReferences();
+	testVector();
+	testList();
+	testMap();
 #endif
-	testThread();
+	testMap();
 	return 0;
 }

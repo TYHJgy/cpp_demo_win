@@ -26,6 +26,9 @@
     <ClCompile Include="PrintData.cpp" />
     <ClCompile Include="Shape.cpp" />
     <ClCompile Include="SmallBox.cpp" />
+    <ClCompile Include="TestList.cpp" />
+    <ClCompile Include="TestReferences.cpp" />
+    <ClCompile Include="TestTemplate.cpp" />
     <ClCompile Include="TestThread_std.cpp" />
     <ClCompile Include="TestVector.cpp" />
   </ItemGroup>
@@ -36,6 +39,9 @@
     <ClInclude Include="PrintData.h" />
     <ClInclude Include="Shape.h" />
     <ClInclude Include="SmallBox.h" />
+    <ClInclude Include="TestList.h" />
+    <ClInclude Include="TestReferences.h" />
+    <ClInclude Include="TestTemplate.h" />
     <ClInclude Include="TestThread_std.h" />
     <ClInclude Include="TestVector.h" />
   </ItemGroup>
