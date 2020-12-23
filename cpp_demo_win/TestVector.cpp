@@ -15,7 +15,7 @@ void TestVector::starTest()
 {
 	cout << "enter starTest" << endl;
 	vector<Box> bs;
-	Box b1;
+	Box b1(0,0,0);
 	bs.push_back(b1);
 	cout << bs.size() << endl;
 

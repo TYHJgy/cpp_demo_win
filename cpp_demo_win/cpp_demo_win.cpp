@@ -1,5 +1,4 @@
-﻿
-#include <iostream>
+﻿#include <iostream>
 #include <iomanip>
 #include <string.h>
 
@@ -15,6 +14,7 @@
 #include <queue>
 #include "TestTemplate.h"
 #include <map>
+#include "TestException.h"
 using namespace std;
 using std::setw;
 
@@ -31,10 +31,13 @@ void testline() {
 	line.length = 10.0; // OK: 因为 length 是公有的
 	cout << "Length of line : " << line.length << endl;
 }
+
+//测试继承、派生类构造函数
 void testBox() {
 	cout << "enter testBox" << endl;
-	Box Box1;                // 声明 Box1，类型为 Box
-	Box Box2;                // 声明 Box2，类型为 Box
+	Box Box1(0,0,0);                // 声明 Box1，类型为 Box
+	Box Box2(0, 0, 0);                // 声明 Box2，类型为 Box
+
 	double volume = 0.0;     // 用于存储体积
 
 	// box 1 详述
@@ -65,7 +68,7 @@ void testSmallBox() {
 //测试友元函数
 void testFriendMethod() {
 	cout << "enter testFriendMethod" << endl;
-	Box box;
+	Box box(0, 0, 0);
 	// 使用成员函数设置宽度
 	box.setWidth(10.0);
 	// 使用友元函数输出宽度
@@ -169,7 +172,7 @@ void testNewAndDelete() {
 	{
 		cout << array[i] << endl;
 	}
-	Box* box = new Box();
+	Box* box = new Box(0, 0, 0);
 	cout << box->getVolume() << endl;
 
 
@@ -186,13 +189,7 @@ void testVector() {
 	TestVector testVector;
 	testVector.starTest();
 }
-//测试引用
-void testReferences() {
-	cout << "testReferences" << endl;
-	TestReferences  testReferences;
-	testReferences.startTest();
-}
-//测试list
+//测试list、iterator
 void testList() {
 	cout << "testList" << endl;
 	TestList testList;
@@ -203,7 +200,7 @@ void testQueues() {
 	std::queue<int> myqueue;
 	int sum(0);
 
-	for (int i = 1; i <= 10; i++) 
+	for (int i = 1; i <= 10; i++)
 		myqueue.push(i);
 
 	while (!myqueue.empty())
@@ -217,19 +214,47 @@ void testQueues() {
 //测试map
 void testMap() {
 	map<int, string> mapStudent;
-	mapStudent.insert(map<int,string>::value_type(1, "student_one"));
-	mapStudent.insert(map<int,string>::value_type(2, "student_two"));
-	mapStudent.insert(map<int,string>::value_type(3, "student_three"));
+	mapStudent.insert(map<int, string>::value_type(1, "student_one"));
+	mapStudent.insert(map<int, string>::value_type(2, "student_two"));
+	mapStudent.insert(map<int, string>::value_type(3, "student_three"));
 	map<int, string>::iterator iter;
 	for (iter = mapStudent.begin(); iter != mapStudent.end(); iter++)
 		cout << iter->first << ' ' << iter->second << endl;
+}
+//测试引用
+void testReferences() {
+	cout << "testReferences" << endl;
+	TestReferences  testReferences;
+	testReferences.startTest();
 }
 //测试模板
 void testTemplates() {
 	TestTemplate testTemplates;
 	testTemplates.startTest();
 }
-
+//测试++
+void testPlusPlus() {
+	int i;
+	i = 0;
+	cout << i++ << endl;
+	i = 0;
+	cout << ++i << endl;
+}
+//测试异常处理
+void testException() {
+	cout << "testException" << endl;
+	TestException testException;
+	testException.startTest();
+}
+//测试运算符重载
+void testOperateReload() {
+	Box box1(10,10,10);
+	Box box2(5,5,5);
+	Box box3 = box1 + box2;
+	cout << box3.getBreadth() << endl;
+	cout << box3.getLength() << endl;
+	cout << box3.getHeight() << endl;
+}
 int main()
 {
 	cout << "main" << endl;
@@ -247,8 +272,11 @@ int main()
 	testReferences();
 	testVector();
 	testList();
-	testMap();
+	testMap(); 
+	testPlusPlus(); 
+	testException();
+	testOperateReload();
 #endif
-	testMap();
+	testOperateReload();
 	return 0;
 }

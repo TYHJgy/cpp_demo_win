@@ -26,6 +26,7 @@
     <ClCompile Include="PrintData.cpp" />
     <ClCompile Include="Shape.cpp" />
     <ClCompile Include="SmallBox.cpp" />
+    <ClCompile Include="TestException.cpp" />
     <ClCompile Include="TestList.cpp" />
     <ClCompile Include="TestReferences.cpp" />
     <ClCompile Include="TestTemplate.cpp" />
@@ -39,6 +40,7 @@
     <ClInclude Include="PrintData.h" />
     <ClInclude Include="Shape.h" />
     <ClInclude Include="SmallBox.h" />
+    <ClInclude Include="TestException.h" />
     <ClInclude Include="TestList.h" />
     <ClInclude Include="TestReferences.h" />
     <ClInclude Include="TestTemplate.h" />
