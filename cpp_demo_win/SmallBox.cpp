@@ -6,7 +6,7 @@ double SmallBox::getSmallWidth(void)
     return width;
 }
 
-SmallBox::SmallBox():Box(0, 0, 0){   
+SmallBox::SmallBox():Box(1.0, 1.0, 1.0){   
 
 }
 

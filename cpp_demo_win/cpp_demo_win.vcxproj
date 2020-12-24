@@ -31,6 +31,7 @@
     <ClCompile Include="TestReferences.cpp" />
     <ClCompile Include="TestTemplate.cpp" />
     <ClCompile Include="TestThread_std.cpp" />
+    <ClCompile Include="TestTimeAndData.cpp" />
     <ClCompile Include="TestVector.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -45,6 +46,7 @@
     <ClInclude Include="TestReferences.h" />
     <ClInclude Include="TestTemplate.h" />
     <ClInclude Include="TestThread_std.h" />
+    <ClInclude Include="TestTimeAndData.h" />
     <ClInclude Include="TestVector.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

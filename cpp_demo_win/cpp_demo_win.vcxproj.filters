@@ -54,6 +54,9 @@
     <ClCompile Include="TestException.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="TestTimeAndData.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Box.h">
@@ -90,6 +93,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="TestException.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TestTimeAndData.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
